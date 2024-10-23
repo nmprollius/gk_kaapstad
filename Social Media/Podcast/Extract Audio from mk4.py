@@ -12,12 +12,16 @@ root.after_idle(root.attributes, '-topmost', False)
 
 # Set the initial directory to the Downloads folder
 downloads_folder = os.path.join(os.path.expanduser("~"), "Downloads")
+# Set the dedault name to Erediens.mp3
+default_filename = "Erdiens.mp3"
+
 
 # Open the file dialog to select an Excel file in the Downloads folder
 file_path = filedialog.askopenfilename(
     initialdir=downloads_folder,
     title="Select an Video FileExcel file",
-    filetypes=[('MP4 files', '*.mp4'),('MOV files','*.mov')]
+    filetypes=[('MP4 files', '*.mp4'),('MOV files','*.mov')],
+    initialfile=default_filename
 )
 
 # Check if a file was selected
